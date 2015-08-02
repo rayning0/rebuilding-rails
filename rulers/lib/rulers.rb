@@ -1,8 +1,10 @@
+require "erubis"
 require "rulers/version"
 require "rulers/array"
 require "rulers/routing"
 require "rulers/util"
 require "rulers/dependencies"
+require "rulers/controller"
 
 module Rulers
   class Application
@@ -11,7 +13,9 @@ module Rulers
         return [404, {'Content-Type' => 'text/html'}, []]
       end
 
+      # Exercise Three: Roots and Routes (p. 37)
       if env['PATH_INFO'] == '/'
+
         #klass = Object.const_get('QuotesController')
         #controller = QuotesController.new(env)
         #text = controller.a_quote
@@ -28,16 +32,6 @@ module Rulers
 
         [200, {'Content-Type' => 'text/html'}, [text]]
       end
-    end
-  end
-
-  class Controller
-    def initialize(env)
-      @env = env
-    end
-
-    def env
-      @env
     end
   end
 end

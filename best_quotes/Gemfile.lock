@@ -2,6 +2,7 @@ PATH
   remote: ../rulers
   specs:
     rulers (0.0.2)
+      erubis
       rack
 
 GEM
@@ -9,6 +10,7 @@ GEM
   specs:
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    erubis (2.7.0)
     ffi (1.9.10)
     hitimes (1.2.2)
     listen (2.10.1)

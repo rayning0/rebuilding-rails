@@ -7,7 +7,7 @@ My version of "Rebuilding Rails" by Noah Gibbs, one of the best, most in-depth b
 - Learn how Ruby metaprogramming works in Rails
 - Create my own routing system
 - Learn how Rails automatically loads controllers
-- Create controllers/videos/models from scratch
+- Create controllers/views/models from scratch
 - Learn about request/response
 - Create my own Object-Relational Mapping to talk to a database, and
 - Learn about Rack middleware.

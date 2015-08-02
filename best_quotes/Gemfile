@@ -1,2 +1,9 @@
 source 'https://rubygems.org'
-gem 'rulers'
+gem 'rulers', path: '../rulers'
+
+group :development do
+  gem 'rerun'
+end
+
+# If you run “bundle exec rerun -- rackup -p 3001”, then change a file,
+# rerun should automatically kill and restart your server

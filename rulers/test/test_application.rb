@@ -1,9 +1,20 @@
-require_relative "test_helper"
+# Can't get this test file to run successfully
 
-class TestApp < Rulers::Application
+require_relative "./test_helper"
+
+class TestController < Rulers::Controller
+  def index
+    "Hello!"  # not rendering view
+  end
 end
 
-class RulersAppTest < Test::Unit::TestCase
+class TestApp < Rulers::Application
+  def get_controller_and_action(env)
+    [Object.const_get('TestController'), 'index']
+  end
+end
+
+class RulersAppTest < Minitest::Test
   include Rack::Test::Methods
 
   def app
@@ -11,9 +22,10 @@ class RulersAppTest < Test::Unit::TestCase
   end
 
   def test_request
-    get "/"
+    get "/test/index"
     assert(last_response.ok?)
     body = last_response.body
-    assert_equal('Hello from Ruby on Rulers!', body)
+    # assert_equal('Hello', body)
+    assert(body["Hello blah"])
   end
 end
